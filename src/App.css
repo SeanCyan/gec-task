@@ -1,32 +1,112 @@
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 635px;
+  background: linear-gradient(318deg, #86A8E7, #91EAE4);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+/* desktop layout */
+
+@media all and (min-width: 768px) {
+  .App {
+    position: absolute;
+    width: 500px;
+    height: 700px;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+  .company_logo {
+    width: 300px;
+  }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* logo */
+
+.company_logo {
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* header */
+
+.header {
+  position: absolute;
+  top: 40%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
   color: white;
+  padding: 10px;
+  border-bottom: 1px solid white;
 }
 
-.App-link {
-  color: #61dafb;
+/* small screen mobile */
+
+@media all and (max-width: 320px) {
+
+  .header {
+    padding-top: 0;
+  }
+  
+  .header h1,
+  .header h3 {
+    margin: 0;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* stats */
+
+.card_container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.card {
+  width:80%;
+  margin: 0 auto;
+  color: white;
+  padding: 10px;
+  height: 80px;
+}
+
+.card_content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  line-height: 1em;
+}
+
+.card h2 {
+  display: inline-block;
+  font-size: 2em;
+  margin: 0 0 10px 0;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+
+.small {
+  font-size: 1.25rem;
+}
+
+.red .small {
+  color: rgb(218, 16, 76);
+}
+
+.green .small {
+  color: rgb(11, 145, 44);
 }
